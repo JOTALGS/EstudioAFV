@@ -226,11 +226,10 @@ def order_cols():
     else:
         order_cols_list [9] = -1    
 
-    print('va pikel')
     with open('ocols.pickle', 'wb') as file:
         # Serialize the object and write it to the file
         pickle.dump(order_cols_list, file)
-        print('fue pikal')
+        
 
 def catch_bad_human(año,mes):
 
@@ -348,11 +347,11 @@ def create_list(dir_exl,mes,año):
             f_2= day.group(3)
         ##print(int(iva_bas[x]))
         ##print(type(iva_bas[x]))
-        print('mon:', mon[x],'for', forma[x])
+        ##print('mon:', mon[x],'for', forma[x])
 
         
         if str(mon[x]) == "$" and "Contado" in str(forma[x]):
-            print('YES')
+            ##print('YES')
             f_list.append(f'\n{f_2},{cta_caja},{cta_ivabas},"{tipo[x]} A {num[x]}",,0,{tot[x]},{cod_ivabas},{iva_bas[x]},0,I')
         elif mon[x] == "$" and "Credito" in forma[x]:
             f_list.append(f'\n{f_2},{cta_deudores},{cta_ivabas},"{tipo[x]} A {num[x]}",,0,{tot[x]},{cod_ivabas},{iva_bas[x]},0,V')
